@@ -21,12 +21,8 @@ class IndexController extends AppController {
 	}
 
 	public function index() {
-		$this->layout = 'frontend/full';
-		$this->loadModel('Thuoc');
-		$this->loadModel('Benh');
-		$thuocs = $this->Thuoc->find('all', array('limit' => 5));
-		$benhs = $this->Benh->find('all', array('limit' => 5));
-		$this->set(compact('benhs', 'thuocs'));
+		$this->layout = 'frontend/home';
+		
 	}
 
 	public function search() {
