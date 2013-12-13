@@ -18,7 +18,7 @@ class CategoriesController extends AppController {
 	public $layout = 'admin/admin';
 
 	public function admin_index() {
-		$this->Category->recursive = 0;
+		$this->Category->recursive = 1;
 		$this->paginate = array('limit' => $this->limit);
 		$categories = $this->Paginator->paginate();
 		$this->set('categories', $categories);

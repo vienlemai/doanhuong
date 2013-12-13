@@ -90,8 +90,8 @@ class Category extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Post' => array(
-			'className' => 'Post',
+		'Thuoc' => array(
+			'className' => 'Thuoc',
 			'foreignKey' => 'category_id',
 			'dependent' => false,
 			'conditions' => '',

@@ -14,7 +14,7 @@
                             <tr>
                                 <th>TT</th>
                                 <th>Tên danh mục</th>
-                                <th>Danh mục cha</th>
+                                <th>Số lượng thuốc</th>
                                 <th>Ngày tạo</th>
                                 <th>Thao tác</th>
                             </tr>
@@ -29,19 +29,18 @@
 								<tr>
 									<td><?php echo $stt++ ?></td>
 									<td><?php echo $row['Category']['name'] ?></td>
-									<td><?php echo $row['ParentCategory']['name'] ?></td>
+									<td><?php echo count($row['Thuoc']) ?></td>
 									<td>
 										<?php echo date('d/m/Y', strtotime($row['Category']['created'])) ?>
 									</td>
 									<td>
 										<?php
 										echo $this->Html->link($this->Html->image('admin/edit.png'), array('action' => 'edit', $row['Category']['id']), array('escape' => false));
-										if (!empty($row['Category']['parent_id'])):
+									
 											//echo $this->Form->postLink($this->Html->image('admin/delete.png'), array('action' => 'delete'), array('escape' => false));
 											echo $this->Form->postLink(
 													$this->Html->image('admin/delete.png'), array('action' => 'delete', $row['Category']['id']), array('escape' => false), 'Bạn có chắc chắn muốn xóa ?'
 											);
-										endif;
 
 										?>
 
