@@ -15,7 +15,6 @@
                                 <th>TT</th>
                                 <th>Tên danh mục</th>
                                 <th>Danh mục cha</th>
-                                <th>Trạng thái</th>
                                 <th>Ngày tạo</th>
                                 <th>Thao tác</th>
                             </tr>
@@ -31,17 +30,6 @@
 									<td><?php echo $stt++ ?></td>
 									<td><?php echo $row['Category']['name'] ?></td>
 									<td><?php echo $row['ParentCategory']['name'] ?></td>
-									<td>
-										<?php
-										if ($row['Category']['is_active'] == 0) {
-											echo "<span class='icon'><a href='" . $this->Html->url('/categories/makeActive/' . $row['Category']['id'] . '/1') . "'><img src='" . $this->Html->url('/') . "img/admin/dis-approve.png' border='0'></a></span>";
-										} else {
-											echo "<span class='icon'><a href='" . $this->Html->url('/categories/makeActive/' . $row['Category']['id'] . '/0') . "'><img src='" . $this->Html->url('/') . "img/admin/approve.png' border='0'></a></span>";
-										}
-
-										?>
-
-									</td>
 									<td>
 										<?php echo date('d/m/Y', strtotime($row['Category']['created'])) ?>
 									</td>
