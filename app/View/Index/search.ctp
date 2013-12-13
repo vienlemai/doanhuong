@@ -48,7 +48,7 @@ $mapController = array(
 					</div>
 				<?php endforeach; ?>
 			<?php else : ?>
-			<h3>Không tìm thấy kết quả nào !</h3>
+				<h3>Không tìm thấy kết quả nào !</h3>
 			<?php endif; ?>
 		</div>
 	</div>

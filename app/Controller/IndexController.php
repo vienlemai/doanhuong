@@ -28,6 +28,9 @@ class IndexController extends AppController {
 	public function search() {
 		$this->layout = 'frontend/full';
 		$typeSearch = $this->request->query('typesearch');
+		if(empty($typeSearch)){
+			$typeSearch = 'benh';
+		}
 		//var_dump($this->request->query);		exit();
 		$result = array();
 		$key = $this->request->query('key');
