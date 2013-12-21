@@ -9,7 +9,6 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class BenhsController extends AppController {
-
 	/**
 	 * Components
 	 *
@@ -23,26 +22,25 @@ class BenhsController extends AppController {
 	 *
 	 * @return void
 	 */
-	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->set('muas',$this->Benh->mua);
+		$this->set('muas', $this->Benh->mua);
 	}
+
 	public function index() {
 		$this->layout = 'frontend/benh';
 		$sub_title = '';
-		if(!empty($this->request->query['mua'])){
+		if (!empty($this->request->query['mua'])) {
 			$mua = $this->request->query['mua'];
-			$conds = array('Benh.mua'=>$mua);
+			$conds = array('Benh.mua' => $mua);
 			$sub_title = $this->Benh->mua[$mua];
-		}
-		else{
+		} else {
 			$conds = null;
 			$sub_title = 'Danh sách bệnh';
 		}
-		$this->paginate = array('conditions'=>$conds);
+		$this->paginate = array('conditions' => $conds);
 		$this->Benh->recursive = 0;
-		$this->set('sub_title',$sub_title);
+		$this->set('sub_title', $sub_title);
 		$this->set('benhs', $this->Paginator->paginate());
 	}
 
@@ -132,7 +130,7 @@ class BenhsController extends AppController {
 	public function admin_index() {
 		$this->Benh->recursive = 0;
 		$this->set('benhs', $this->Paginator->paginate());
-		$this->set('mua',$this->Benh->mua);
+		$this->set('mua', $this->Benh->mua);
 	}
 
 	/**
@@ -157,6 +155,7 @@ class BenhsController extends AppController {
 	 */
 	public function admin_add() {
 		if ($this->request->is('post')) {
+			$this->request->data['Benh']['viewed'] = 0;
 			$this->Benh->create();
 			if ($this->Benh->save($this->request->data)) {
 				$this->Session->setFlash('Lưu thành công', 'flash_success');

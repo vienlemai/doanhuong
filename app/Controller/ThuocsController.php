@@ -58,6 +58,8 @@ class ThuocsController extends AppController {
 		if (!$this->Thuoc->exists($id)) {
 			throw new NotFoundException(__('Invalid thuoc'));
 		}
+		$this->Thuoc->id = $id;
+		$this->Thuoc->updateAll(array('Thuoc.viewed' => 'Thuoc.viewed+1'), array('Thuoc.id' => $id));
 		$options = array('conditions' => array('Thuoc.' . $this->Thuoc->primaryKey => $id));
 		$this->set('thuoc', $this->Thuoc->find('first', $options));
 	}
@@ -160,6 +162,7 @@ class ThuocsController extends AppController {
 	 */
 	public function admin_add() {
 		if ($this->request->is('post')) {
+			$this->request->data['Thuoc']['viewed'] = 0;
 			$this->Thuoc->create();
 			if ($this->Thuoc->save($this->request->data)) {
 				$this->Session->setFlash('Lưu thuốc thành công', 'flash_success');

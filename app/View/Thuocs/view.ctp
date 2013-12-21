@@ -4,6 +4,10 @@
 		<div>
 			<div class="left">
 				<img src="<?php echo $thuoc['Thuoc']['thumbnail'] ?>" />
+				<ul>
+					<li>Ngày đăng : <?php echo date('d/m/Y',  strtotime($thuoc['Thuoc']['created'])) ?></li>
+					<li>Lượt xem : <?php echo $thuoc['Thuoc']['viewed'] ?></li>
+				</ul>
 			</div>
 
 			<div class="right">
@@ -45,8 +49,11 @@
 				<div class="viewtit">
 					<?php echo $thuoc['Thuoc']['thong_tin_them'] ?>
 				</div>
+					<?php echo $this->Facebook->comments(array('width'=>'480px')); ?>
 			</div>
+			
 			<div class="clear"></div>
+
 		</div>
 	</div>
 </div>

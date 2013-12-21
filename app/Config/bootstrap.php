@@ -217,3 +217,4 @@ CakeLog::config('error', array(
 CakePlugin::loadAll(array(
     'Usermgmt' => array('bootstrap' => true, 'routes' => true),
 ));
+CakePlugin::load('Facebook');

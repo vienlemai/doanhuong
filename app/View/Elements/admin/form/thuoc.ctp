@@ -41,8 +41,8 @@
 						<label>Thành phần</label>
 						<div class="controls">
 							<?php
-							echo $this->Form->input('thanh_phan', array('div' => FALSE, 'label' => false, 'id' => 'full_text', 'class' => 'input-xxlarge textarea wysihtml5-editor'));
-
+							echo $this->Form->input('thanh_phan', array('div' => FALSE, 'label' => false, 'id' => 'editor1', 'class' => 'input-xxlarge textarea wysihtml5-editor'));
+							echo $this->TvFck->create('editor1', array('toolbar' => 'basic'), 'editor1');
 							?>
 						</div>
 					</div>
@@ -51,8 +51,8 @@
 						<label>Dạng bào chế</label>
 						<div class="controls">
 							<?php
-							echo $this->Form->input('dang_bao_che', array('div' => FALSE, 'label' => false, 'id' => 'full_text', 'class' => 'input-xxlarge textarea wysihtml5-editor'));
-
+							echo $this->Form->input('dang_bao_che', array('div' => FALSE, 'label' => false, 'id' => 'full_text', 'class' => 'input-xxlarge'));
+							
 							?>
 						</div>
 					</div>
@@ -70,8 +70,8 @@
 						<label>Chỉ định/Chống chỉ định</label>
 						<div class="controls">
 							<?php
-							echo $this->Form->input('chong_chi_dinh', array('div' => FALSE, 'label' => false, 'id' => 'full_text', 'class' => 'input-xxlarge textarea wysihtml5-editor'));
-
+							echo $this->Form->input('chong_chi_dinh', array('div' => FALSE, 'label' => false, 'id' => 'editor2', 'class' => 'input-xxlarge textarea wysihtml5-editor'));
+							echo $this->TvFck->create('editor2', array('toolbar' => 'basic'), 'editor2');
 							?>
 						</div>
 					</div>
@@ -80,8 +80,8 @@
 						<label>Cách dùng</label>
 						<div class="controls">
 							<?php
-							echo $this->Form->input('cach_dung', array('div' => FALSE, 'label' => false, 'id' => 'full_text', 'class' => 'input-xxlarge textarea wysihtml5-editor'));
-
+							echo $this->Form->input('cach_dung', array('div' => FALSE, 'label' => false, 'id' => 'editor3', 'class' => 'input-xxlarge textarea wysihtml5-editor'));
+							echo $this->TvFck->create('editor3', array('toolbar' => 'basic'), 'editor3');
 							?>
 						</div>
 					</div>
@@ -99,8 +99,8 @@
 						<label>Số đăng ký</label>
 						<div class="controls">
 							<?php
-							echo $this->Form->input('so_dabg_ky', array('div' => FALSE, 'label' => false, 'id' => 'full_text', 'class' => 'input-xxlarge textarea wysihtml5-editor'));
-
+							echo $this->Form->input('so_dang_ky', array('div' => FALSE, 'label' => false, 'id' => 'full_text', 'class' => 'input-xxlarge'));
+							
 							?>
 						</div>
 					</div>
@@ -109,8 +109,8 @@
 						<label>Thông tin thêm</label>
 						<div class="controls">
 							<?php
-							echo $this->Form->input('thong_tin_them', array('div' => FALSE, 'label' => false, 'id' => 'full_text', 'class' => 'input-xxlarge textarea wysihtml5-editor'));
-
+							echo $this->Form->input('thong_tin_them', array('div' => FALSE, 'label' => false, 'id' => 'editor4', 'class' => 'input-xxlarge textarea wysihtml5-editor'));
+							echo $this->TvFck->create('editor4', array('toolbar' => 'basic'), 'editor4');
 							?>
 						</div>
 					</div>
@@ -127,3 +127,4 @@
 	</div>
 
 </div>
+<?php echo $this->Html->script('tinymce/tinymce.min',array('block'=>'scriptBottom')) ?>

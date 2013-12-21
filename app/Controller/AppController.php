@@ -34,7 +34,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-    var $helpers = array('Form', 'Html', 'Session', 'Js', 'Table', 'TvFck');
+    var $helpers = array('Form', 'Html', 'Session', 'Js', 'Table', 'TvFck','Facebook.Facebook');
     public $components = array('Session', 'RequestHandler', 'Usermgmt.UserAuth', 'Common',);
     protected $limit = 30;
 
